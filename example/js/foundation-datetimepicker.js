@@ -522,6 +522,13 @@
 				}
 				html.push('<span class="minute'+clsName+'">'+hours+':'+(i<10?'0'+i:i)+'</span>');
 			}
+			if (this.showAMPM) {
+				if (hours >= 12) {
+					html.push('<span class="disabled">'+'PM'+'</span>');
+				} else {
+					html.push('<span class="disabled">'+'AM'+'</span>');
+				}
+			}
 			this.picker.find('.datetimepicker-minutes td').html(html.join(''));
 
 			var currentYear = this.date.getUTCFullYear();
